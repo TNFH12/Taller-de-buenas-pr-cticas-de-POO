@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 package taller_parejas;
-
 /**
  *
  * @author tania
  */
 public class Taller_parejas {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
+        
     }
     
 }
