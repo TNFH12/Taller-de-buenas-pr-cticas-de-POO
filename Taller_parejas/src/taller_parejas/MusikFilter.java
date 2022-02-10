@@ -5,9 +5,14 @@
 package taller_parejas;
 
 /**
- *
- * @author jaira
+ * @author jair ortiz
+ * 
+ * Se crean los metodos que realizaran lostros por Año, Duracion, Fecha, Genero
+ * 
  */
 public interface MusikFilter {
-    
+    void Gender_filter();
+    void Same_year();
+    void Duration_order();
+    void Order_date();
 }
