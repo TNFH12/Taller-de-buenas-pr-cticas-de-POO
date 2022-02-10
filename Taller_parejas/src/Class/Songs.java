@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package taller_parejas.Songs;
-
+package Class;
+import Interfaces.MusikFilter;
 /**
  *
  * @author jaira
  */
-public class Songs {
+public class Songs implements MusikFilter {
     
     private String Title,Duration,Gender,Cover,Description;
     private int Id,Year;
@@ -75,6 +75,26 @@ public class Songs {
     @Override
     public String toString() {
         return  " Id=" +Id+"--"+Title+"--"+Year+"--"+Duration+"--"+Gender +"--"+Cover+"--"+Description;
+    }
+
+    @Override
+    public void Gender_filter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Same_year() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Duration_order() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Order_date() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

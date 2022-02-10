@@ -7,7 +7,7 @@ package taller_parejas;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import taller_parejas.Songs.Songs;
+import Class.Songs;
 
 
 /**
