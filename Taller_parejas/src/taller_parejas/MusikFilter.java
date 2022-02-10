@@ -15,4 +15,5 @@ public interface MusikFilter {
     void Same_year();
     void Duration_order();
     void Order_date();
+
 }
