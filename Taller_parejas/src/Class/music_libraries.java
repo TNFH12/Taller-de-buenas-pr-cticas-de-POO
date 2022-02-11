@@ -10,5 +10,6 @@ package Class;
  * @author tania
  */
 public abstract class music_libraries {
-    
+
+    public abstract void menu();
 }
