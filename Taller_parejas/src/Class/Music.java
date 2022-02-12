@@ -168,7 +168,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo realiza el filtrado de las canciones por Fecha y me retorna una lista con el respectivo orden
+    Este metodo realiza el filtrado de las canciones por Fecha y me retorna una lista con el respectivo orden
     */
     
     @Override
