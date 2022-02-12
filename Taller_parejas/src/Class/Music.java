@@ -77,7 +77,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo realiza el filtrado de las canciones por Genero y me retorna una lista con el respectivo orden
+    Este metodo realiza el filtrado de las canciones por Genero y me retorna una lista con el respectivo orden
     */
     
     @Override
@@ -96,7 +96,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo realiza el filtrado de las canciones por Año y me retorna una lista con el respectivo orden, en este caso
+    Este metodo realiza el filtrado de las canciones por Año y me retorna una lista con el respectivo orden, en este caso
     se puede filtrar de manera ascendente o descendente.
     */
     
@@ -144,7 +144,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo realiza el filtrado de las canciones por Duracion y me retorna una lista con el respectivo orden
+    Este metodo realiza el filtrado de las canciones por Duracion y me retorna una lista con el respectivo orden
     */
     
     @Override
@@ -191,7 +191,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo permite el ingreso de una nueva cancion a la lista, como metodo de rectificacion se 
+    Este metodo permite el ingreso de una nueva cancion a la lista, como metodo de rectificacion se 
     solicita que ingrese nuevamente el genero de la cancion y asi se mostrara la nueva cancion
     */
     
@@ -215,7 +215,7 @@ public class Music extends music_libraries implements MusikFilter {
     }
 
     /*
-    Este medodo solicita los datos necesarios de la cancion para ser ingresada a la playlist predeterminada
+    Este metodo solicita los datos necesarios de la cancion para ser ingresada a la playlist predeterminada
     */
     
     public void createList(ArrayList<Songs> Introduce) {
