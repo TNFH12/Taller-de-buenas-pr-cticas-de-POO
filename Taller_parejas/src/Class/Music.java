@@ -39,7 +39,7 @@ public class Music extends music_libraries implements MusikFilter {
             System.out.println("2. Filtra canciones del mismo genero");
             System.out.println("3. Filtrar canciones en el mismo año");
             System.out.println("4. Ordenar por fecha");
-            System.out.println("5. Ordenar por duracio");
+            System.out.println("5. Ordenar por duración");
             System.out.println("6. Salir");
 
             try {
