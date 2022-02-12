@@ -177,20 +177,7 @@ public class Music extends music_libraries implements MusikFilter {
         createList((ArrayList<Songs>) s);
     }
 
-    public void searchGender(ArrayList<Songs> Search) {
-        int cont = 0;
-        System.out.println("Escribe un genero musical");
-        search = sca.next();
-        for (Songs elemento : Search) {
-            if (elemento.getGender().equalsIgnoreCase(search)) {//Buscamos el ALUMNO mediante un EQUALS
-                System.out.println(elemento);
-                cont += 1;
-            }
-        }
-        if (cont == 0) {
-            System.out.println("No hay generos con ese nombre");
-        }
-    }
+    
 
     public void createList(ArrayList<Songs> Introduce) {
 
@@ -212,6 +199,21 @@ public class Music extends music_libraries implements MusikFilter {
 
             Introduce.add(new Songs(Id, Title, Year, Duration, Gender, Cover, Description));
         
+    }
+    
+    public void searchGender(ArrayList<Songs> Search){
+        int cont = 0;
+        System.out.println("Escribe un genero musical");
+        search = sca.next();
+        for (Songs elemento : Search) {
+            if (elemento.getGender().equalsIgnoreCase(search)) {//Buscamos el ALUMNO mediante un EQUALS
+                System.out.println(elemento);
+                cont += 1;
+            }
+        }
+        if (cont == 0) {
+            System.out.println("No hay generos con ese nombre");
+        }
     }
 
 }
