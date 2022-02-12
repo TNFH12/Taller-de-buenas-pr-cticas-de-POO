@@ -1,18 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Class;
 
 /**
- *
- * @author jaira
+ *Esta clase contiene los atributos y metodos de una cancion (Song)
+ * @author Jair Ortiz - jairalbert1997@hotmail.com
+ * @author Tania Forero - tanianickoll11@gmail.com
+ * @version 1.0 2022-02-12
  */
 public class Songs implements Comparable<Songs> {
 
     private String Id, Title, Year, Duration, Gender, Cover, Description;
+        
+    /**
+     * Atributos: Id, Titulo, Año, Duracion, Genero, Caratula, Descripcion
+     * Metodo constructor por defecto
+     */
     
-
     public Songs(String Id, String Title, String Year, String Duration, String Gender, String Cover, String Description) {
         this.Id = Id;
         this.Title = Title;
@@ -23,6 +25,7 @@ public class Songs implements Comparable<Songs> {
         this.Description = Description;
     }
 
+    // Seccion de metodos Getter y Setter para los atributos propios de la clase 
     public String getId() {
         return Id;
     }
@@ -78,14 +81,15 @@ public class Songs implements Comparable<Songs> {
     public void setDescription(String Description) {
         this.Description = Description;
     }
-
+    //Empleamiento del metodo toString para imprimir las canciones en el orden que se soliciten con los filtros 
     @Override
     public String toString() {
         return " Id=" + Id + "--" + Title + "--" + Year + "--" + Duration + "--" + Gender + "--" + Cover + "--" + Description;
     }
-
+    //Se emplea el metodo compare para organizar la lista de canciones segun el año de lanzamiento
     @Override
-    public int compareTo(Songs o) {
+    public int compareTo(Songs o) { // es el video de organizar 
+        
        return Year.compareTo(o.getYear());
     }
 
