@@ -15,20 +15,21 @@ import java.util.*;
  */
 public class Music extends music_libraries implements MusikFilter {
 
+    private String Id, Title, Year, Duration, Gender, Cover, Description;
     Scanner sca = new Scanner(System.in);
     int option; //Guardaremos la opcion del usuario
-    Songs p1 = new Songs("1", "Heroe Favorito", "2017", "3.59", "Bachata", "RomeoSantos.jpg", "Cancion hit del autor");
-    Songs p2 = new Songs("2", "Culpa al corazon", "2017", "4.52", "Bachata", "PrinceRoyce.jpg", "Exito del cantante en 2017");
-    Songs p3 = new Songs("3", "Pegame tu vicio", "2000", "5.01", "Merengue", "EddyHerrera.jpg", "Hits de fiestas colombianas");
-    Songs p4 = new Songs("4", "No hay pesos", "1995", "4.42", "Merengue", "Loscantantes.jpg", "Cancion importante en los 90");
-    Songs p5 = new Songs("5", "November Rain", "1992", "12.30", "Rock", "GunsN'Roses.jpg", "Cancion emblematica del grupo Guns N Roses");
-    Songs p6 = new Songs("6", "Fiesta Pagana", "2000", "4.57", "Rock", "Mago de oz.jpg", "El señor de los gramillos");
-    Songs p7 = new Songs("7", "Comen & Get It", "2013", "3.51", "Pop", "SelenaGomez.jpg", "Stars Dance");
-    Songs p8 = new Songs("8", "Rolling in the Deep", "2011", "3.49", "Pop", "Adele.jpg", "Hot 100 55th Anniversary: The All-Time Top 100 Songs");
-    Songs p9 = new Songs("9", "No me toquen ese bals", "1989", "2.32", "Clasica", "JulioJaramillo.jpg", "Musica clasica pero sabrosa");
-    Songs p10 = new Songs("10", "Como te extraño mi amor", "1987", "3.09", "Clasica", "LeoDan.jpg", "Tema imponente del autor");
+    Songs p1 = new Songs("1", "Heroe Favorito", "2017", "3:59", "Bachata", "RomeoSantos.jpg", "Cancion hit del autor");
+    Songs p2 = new Songs("2", "Culpa al corazon", "2017", "4:52", "Bachata", "PrinceRoyce.jpg", "Exito del cantante en 2017");
+    Songs p3 = new Songs("3", "Pegame tu vicio", "2000", "5:01", "Merengue", "EddyHerrera.jpg", "Hits de fiestas colombianas");
+    Songs p4 = new Songs("4", "No hay pesos", "1995", "4:42", "Merengue", "Loscantantes.jpg", "Cancion importante en los 90");
+    Songs p5 = new Songs("5", "Believer", "2017", "3:24", "Rock", "Imagine Dragons.jpg", "Cancion emblematica del grupo Imagine Dragons");
+    Songs p6 = new Songs("6", "Fiesta Pagana", "2000", "4:57", "Rock", "Mago de oz.jpg", "El señor de los gramillos");
+    Songs p7 = new Songs("7", "Comen & Get It", "2013", "3:51", "Pop", "SelenaGomez.jpg", "Stars Dance");
+    Songs p8 = new Songs("8", "Rolling in the Deep", "2011", "3:49", "Pop", "Adele.jpg", "Hot 100 55th Anniversary: The All-Time Top 100 Songs");
+    Songs p9 = new Songs("9", "No me toquen ese bals", "1989", "2:32", "Clasica", "JulioJaramillo.jpg", "Musica clasica pero sabrosa");
+    Songs p10 = new Songs("10", "Como te extraño mi amor", "1987", "3:09", "Clasica", "LeoDan.jpg", "Tema imponente del autor");
     public List<Songs> s = new ArrayList<Songs>();
-    String busqueda;
+    String search;
 
     @Override
     public void menu() {
@@ -48,7 +49,7 @@ public class Music extends music_libraries implements MusikFilter {
 
                 switch (option) {
                     case 1:
-
+                        create_playlist();
                     case 2:
                         Gender_filter();
                         break;
@@ -86,13 +87,7 @@ public class Music extends music_libraries implements MusikFilter {
         s.add(p8);
         s.add(p9);
         s.add(p10);
-        System.out.println("Escribe un genero musical");
-        busqueda = sca.next();
-        s.indexOf(busqueda);
-        for (Songs elemento : s) {
-            System.out.println(elemento);
-        }
-
+        searchGender((ArrayList<Songs>) s);
     }
 
     @Override
@@ -151,7 +146,7 @@ public class Music extends music_libraries implements MusikFilter {
         s.add(p8);
         s.add(p9);
         s.add(p10);
-        Collections.sort(s);
+        Collections.sort(s, new duration());
         for (Songs elemento : s) {
             System.out.println(elemento);
         }
@@ -170,7 +165,7 @@ public class Music extends music_libraries implements MusikFilter {
         s.add(p8);
         s.add(p9);
         s.add(p10);
-        Collections.sort(s, new year());
+        Collections.sort(s);
         for (Songs elemento : s) {
             System.out.println(elemento);
         }
@@ -179,7 +174,44 @@ public class Music extends music_libraries implements MusikFilter {
 
     @Override
     public void create_playlist() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        createList((ArrayList<Songs>) s);
+    }
+
+    public void searchGender(ArrayList<Songs> Search) {
+        int cont = 0;
+        System.out.println("Escribe un genero musical");
+        search = sca.next();
+        for (Songs elemento : Search) {
+            if (elemento.getGender().equalsIgnoreCase(search)) {//Buscamos el ALUMNO mediante un EQUALS
+                System.out.println(elemento);
+                cont += 1;
+            }
+        }
+        if (cont == 0) {
+            System.out.println("No hay generos con ese nombre");
+        }
+    }
+
+    public void createList(ArrayList<Songs> Introduce) {
+
+        
+            System.out.println("Ingrese una Id");
+            Id = sca.next();
+            System.out.println("Ingrese un titulo");
+            Title = sca.next();
+            System.out.println("Ingrese el año");
+            Year = sca.next();
+            System.out.println("Ingrese la duracion");
+            Duration = sca.next();
+            System.out.println("Ingrese un genero");
+            Gender = sca.next();
+            System.out.println("Ingrese la caratula");
+            Cover = sca.next();
+            System.out.println("Ingrese una descripcion");
+            Description = sca.next();
+
+            Introduce.add(new Songs(Id, Title, Year, Duration, Gender, Cover, Description));
+        
     }
 
 }

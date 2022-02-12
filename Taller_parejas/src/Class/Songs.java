@@ -86,7 +86,7 @@ public class Songs implements Comparable<Songs> {
 
     @Override
     public int compareTo(Songs o) {
-       return Duration.compareTo(o.getDuration());
+       return Year.compareTo(o.getYear());
     }
 
 }

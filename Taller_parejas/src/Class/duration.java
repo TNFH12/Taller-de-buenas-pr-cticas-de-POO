@@ -9,13 +9,13 @@ import java.util.Comparator;
  *
  * @author tania
  */
-public class year implements Comparator<Songs>{
+public class duration implements Comparator<Songs>{
 
     @Override
     public int compare(Songs o1, Songs o2) {
         Songs s1 = (Songs)o1;
         Songs s2 = (Songs)o2;
-        return s1.getYear().compareTo(s2.getYear());
+        return s1.getDuration().compareTo(s2.getDuration());
     }
     
 }
